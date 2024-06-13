@@ -5,14 +5,14 @@ import argparse
 import numpy as np
 
 from signed_graph.signed_graph import SignedGraph
-
+from algorithms.sorted_eigensign import sorted_eigensign
 from algorithms.eigensign import eigensign
 from algorithms.random_eigensign import random_eigensign
 
 from algorithms.bansal import bansal
 from algorithms.local_search import local_search
 
-from algorithms.greedy_degree_removal import greedy_degree_removal
+#from algorithms.greedy_degree_removal import greedy_degree_removal
 
 from utilities.print_console import print_input
 
@@ -32,7 +32,8 @@ if __name__ == '__main__':
     # read the input graph
     signed_graph = SignedGraph(args.d)
     print_input(args.d, args.a)
-
+    with open('output.txt', 'a') as f:
+        f.write(f'{args.d}, {args.a}')
     # execute the algorithm
     if args.a == 'eigensign':
         solution, x = eigensign(signed_graph)
@@ -46,5 +47,8 @@ if __name__ == '__main__':
     elif args.a == 'random_local':
         solution, x = local_search(signed_graph, args.mi, args.ct)
 
-    elif args.a == 'greedy_signed_degree':
-        solution, x = greedy_degree_removal(signed_graph)
+    if args.a == 'sorted_eigensign':
+        solution, x = sorted_eigensign(signed_graph)
+
+    #elif args.a == 'greedy_signed_degree':
+    #    solution, x = greedy_degree_removal(signed_graph)

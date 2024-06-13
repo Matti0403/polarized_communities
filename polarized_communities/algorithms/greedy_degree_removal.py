@@ -1,8 +1,8 @@
 from blist import sorteddict
 
-from algorithms.subroutines.commons import *
-from utilities.time_measure import ExecutionTime
-from utilities.print_console import print_end_algorithm
+from polarized_communities.algorithms.subroutines.commons import *
+from polarized_communities.utilities.time_measure import ExecutionTime
+from polarized_communities.utilities.print_console import print_end_algorithm
 
 
 def greedy_degree_removal(signed_graph, signed_degree=True):

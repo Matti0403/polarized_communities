@@ -1,9 +1,9 @@
 import random
 
-from bansal import bansal
-from algorithms.subroutines.commons import *
-from utilities.time_measure import ExecutionTime
-from utilities.print_console import print_end_algorithm
+from polarized_communities.algorithms.bansal import bansal
+from polarized_communities.algorithms.subroutines.commons import *
+from polarized_communities.utilities.time_measure import ExecutionTime
+from polarized_communities.utilities.print_console import print_end_algorithm
 
 
 def local_search(signed_graph, maximum_changes, convergence_threshold, partial_solution='r'):

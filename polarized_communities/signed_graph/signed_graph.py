@@ -8,7 +8,7 @@ class SignedGraph:
     def __init__(self, dataset_path):
         # nodes
         self.number_of_nodes = 0
-        self.nodes_iterator = xrange(0)
+        self.nodes_iterator = range(0)
 
         # adjacency list
         self.adjacency_list = []
@@ -35,7 +35,7 @@ class SignedGraph:
 
         # get the number of nodes from the first line
         self.number_of_nodes = int(dataset_file.readline().replace('# ', ''))
-        self.nodes_iterator = xrange(self.number_of_nodes)
+        self.nodes_iterator = range(self.number_of_nodes)
 
         # create the empty adjacency list
         self.adjacency_list = [[array('i'), array('i')] for _ in self.nodes_iterator]
@@ -97,7 +97,7 @@ class SignedGraph:
         nodes.sort()
 
         # get the ordering in a map
-        ordering = dict(zip(nodes, xrange(len(nodes))))
+        ordering = dict(zip(nodes, range(len(nodes))))
 
         rows, columns, data = [], [], []
         for node in nodes:
